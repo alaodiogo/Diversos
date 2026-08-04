@@ -34,16 +34,13 @@ funcao = input("Com qual função gostaria de verificar se o número é primo? R
 
 while True:
     try:
-        numero = int(input("Digite o número que gostaria de verficar se é primo: "))
-        if numero < 0: # Caso o usuário escolha uma posição invalida, pede para reescrever uma posição valida
-            print("Posição invalida!")
+        numero = int(input("Digite o número que gostaria de verificar se é primo: "))
+        if numero <= 1: # Caso o usuário escolha uma posição invalida, pede para reescrever uma posição valida
+            print("O número precisa ser maior que 1!")
             continue
         break
     except:
         print(("Caractere invalido, digite um número!")) # Caso o usuário digite uma letra na posição, pede para reescrever
-
-while numero <= 1: # Verifica se o usuário escreveu um número maior que 1
-    numero = int(input("O número precisa ser maior que 1, digite novamente: "))
 
 while funcao.lower() != "linear" and funcao.lower() != "recursiva": # Verifica se o nome das funções foram escritos corretamente
     funcao = input("Função invalida! Escolha entre Recursiva ou Linear: ")
