@@ -36,6 +36,6 @@ while True:
         print(("Caractere invalido, digite um número!")) # Caso o usuário digite uma letra na posição, pede para reescrever
     
 if modo.lower() == "linear": #Aqui acontece a escolha da função e sua invocação para o cálculo
-    print(fibbo_linear((posicao_fibbo)))
+    print(f"fib({posicao_fibbo}) = {fibbo_linear((posicao_fibbo))}")
 else:
-    print(fibbo_recursiva((posicao_fibbo)))
+    print(f"fib({posicao_fibbo}) = {fibbo_recursiva((posicao_fibbo))}")
