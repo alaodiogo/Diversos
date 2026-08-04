@@ -31,7 +31,16 @@ def lista_primos_linear(n):
     return lista_primos
             
 funcao = input("Com qual função gostaria de verificar se o número é primo? Recursiva ou Linear? ")
-numero = int(input("Digite o número que gostaria de verficar se é primo: "))
+
+while True:
+    try:
+        numero = int(input("Digite o número que gostaria de verficar se é primo: "))
+        if numero < 0: # Caso o usuário escolha uma posição invalida, pede para reescrever uma posição valida
+            print("Posição invalida!")
+            continue
+        break
+    except:
+        print(("Caractere invalido, digite um número!")) # Caso o usuário digite uma letra na posição, pede para reescrever
 
 while numero <= 1: # Verifica se o usuário escreveu um número maior que 1
     numero = int(input("O número precisa ser maior que 1, digite novamente: "))
@@ -40,6 +49,6 @@ while funcao.lower() != "linear" and funcao.lower() != "recursiva": # Verifica s
     funcao = input("Função invalida! Escolha entre Recursiva ou Linear: ")
     
 if funcao.lower() == "linear": # Acontece aqui a requisição da função
-    print(lista_primos_linear(numero))
+    print(f"p({numero}) = {lista_primos_linear(numero)}")
 else:
-    print(lista_primos_recursiva(numero))
+    print(f"p({numero}) = {lista_primos_recursiva(numero)}")
